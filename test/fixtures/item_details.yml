@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  minweight: 1
+  weightin: MyString
+  item_id: 
+  rawMaterial_id: 
+
+two:
+  minweight: 1
+  weightin: MyString
+  item_id: 
+  rawMaterial_id: 
