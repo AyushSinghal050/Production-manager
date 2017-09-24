@@ -7,6 +7,11 @@
 			<%quantity = quantity *1000%>
 		<%end%>
 		<% quantity_can_produce = quantity/itemdetail.minweight %>
+		
+		<% if quantity_can_produce > item.Demand %>
+			<% quantity_can_produce = item.Demand %>			
+		<%end%>
+
 		<% if max_production == -1 || max_production > quantity_can_produce %>
 			<% max_production = quantity_can_produce %>			
 		<%end%>

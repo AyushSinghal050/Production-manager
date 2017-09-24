@@ -11,15 +11,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170805182838) do
+ActiveRecord::Schema.define(version: 20170806163551) do
 
   create_table "item_details", force: :cascade do |t|
     t.integer  "minweight"
     t.string   "weightin"
     t.integer  "item_id"
     t.integer  "rawMaterial_id"
-    t.datetime "created_at"     
-    t.datetime "updated_at"     
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
   end
 
   add_index "item_details", ["item_id"], name: "index_item_details_on_item_id"
@@ -28,16 +28,17 @@ ActiveRecord::Schema.define(version: 20170805182838) do
   create_table "items", force: :cascade do |t|
     t.string   "name"
     t.integer  "priority"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer  "Demand"
   end
 
   create_table "raw_materials", force: :cascade do |t|
     t.string   "name"
     t.integer  "quantity"
     t.string   "weightin"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 end
