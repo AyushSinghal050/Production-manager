@@ -54,4 +54,6 @@ Rails.application.routes.draw do
   #     resources :products
   #   end
   get '/' => 'homes#index'
+  get '/homes/today' => 'homes#today'
+  get '/homes/update' => 'homes#update'
 end

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170806163551) do
+ActiveRecord::Schema.define(version: 20170925163852) do
 
   create_table "item_details", force: :cascade do |t|
     t.integer  "minweight"
@@ -28,9 +28,11 @@ ActiveRecord::Schema.define(version: 20170806163551) do
   create_table "items", force: :cascade do |t|
     t.string   "name"
     t.integer  "priority"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",                    null: false
+    t.datetime "updated_at",                    null: false
     t.integer  "Demand"
+    t.integer  "MaxProduction",    default: -1
+    t.integer  "today_production"
   end
 
   create_table "raw_materials", force: :cascade do |t|

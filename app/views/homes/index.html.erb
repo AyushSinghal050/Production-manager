@@ -1,22 +1,11 @@
-<% @items.each do |item| %>
-	<% max_production = -1  %>
-	<% max_production_name = "a" %>
-	<% @itemdetails.where(item_id: item.id).each do |itemdetail| %>
-		<% quantity = @rawmaterials.find(itemdetail.rawMaterial_id).quantity %>
-		<% if @rawmaterials.find(itemdetail.rawMaterial_id).weightin == "Kg" && itemdetail.weightin == 'g' %>
-			<%quantity = quantity *1000%>
-		<%end%>
-		<% quantity_can_produce = quantity/itemdetail.minweight %>
-		
-		<% if quantity_can_produce > item.Demand %>
-			<% quantity_can_produce = item.Demand %>			
-		<%end%>
+<%= link_to "Update", homes_update_path %><br><br><br>
 
-		<% if max_production == -1 || max_production > quantity_can_produce %>
-			<% max_production = quantity_can_produce %>			
-		<%end%>
-	<%end%>
-	<div> You can produce <strong><%=max_production%></strong> of <%= item.name %></div><br>
+<% @items.each do |item| %>
+	<div> You can produce <strong><%= item.MaxProduction %></strong> of <%= item.name %></div><br>
 <%end%>	
 
+
+<br><br><br>
+
+<%= link_to "Today's Plan", homes_today_path %>
 

@@ -1,0 +1,2 @@
+      invoke  active_record
+      remove    db/migrate/20170925145119_add_max_production_to_item.rb
